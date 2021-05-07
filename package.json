@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0"
+    "vue-material-design-icons": "^4.11.0",
+    "vue-router": "^4.0.0-0",
+    "vue3-youtube": "^0.1.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-eslint": "~4.5.0",

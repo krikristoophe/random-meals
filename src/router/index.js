@@ -1,21 +1,32 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../views/Home.vue';
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component() {
-      return import(/* webpackChunkName: "about" */ '../views/About.vue');
-    },
+    path: '/random',
+    name: 'Random',
+    component: () => import(/* webpackChunkName: "meal" */ '@/views/RandomMeal.vue'),
+  },
+  {
+    path: '/meal/:id',
+    name: 'MealById',
+    component: () => import(/* webpackChunkName: "meal" */ '@/views/MealById.vue'),
+  }, {
+    path: '/search',
+    name: 'Search',
+    component: () => import(/* webpackChunkName: "search" */ '@/views/SearchView.vue'),
+  }, {
+    path: '/country/:area',
+    name: 'MealsByCountry',
+    component: () => import(/* webpackChunkName: "country-meal" */ '@/views/MealsByCountry.vue'),
+  }, {
+    path: '/category/:category',
+    name: 'MealsByCategory',
+    component: () => import(/* webpackChunkName: "category-meal" */ '@/views/MealsByCategory.vue'),
   },
 ];
 
